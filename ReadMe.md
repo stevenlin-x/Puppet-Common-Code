@@ -3,9 +3,9 @@ Puppet Common Code
 
 List of some commonly used Puppet code blocks.
 
-## Files and Directory
+### Files and Directory
 
-### Ensure a directory is present with specified properties, if not, create the directory. Also create all intermediate directories if applicable.
+#### Ensure a directory is present with specified properties, if not, create the directory. Also create all intermediate directories if applicable.
 
 ````text
 file { 'directory-name':
@@ -16,7 +16,7 @@ file { 'directory-name':
 }
 ````
 
-### Ensure a directory is present, if not, create the directory and copy the contents from the source directory
+#### Ensure a directory is present, if not, create the directory and copy the contents from the source directory
 
 ````text
 file { 'directory-name':
@@ -28,14 +28,14 @@ file { 'directory-name':
 }
 ````
 
-### Ensure a file is present
+#### Ensure a file is present
 ````text
 file { '/path/to/file':
 	ensure => 'file',
 }
 ````
 
-### Ensure the file is present and copy its contents from the source directory
+#### Ensure the file is present and copy its contents from the source directory
 ````text
 file { '/path/to/file':
 	ensure => 'file',
@@ -43,7 +43,7 @@ file { '/path/to/file':
 }
 ````
 
-### Create a symlink file
+#### Create a symlink file
 ````text
 file { '/path/to/symlink/file':
 	ensure => 'link',
@@ -51,7 +51,7 @@ file { '/path/to/symlink/file':
 }
 ````
 
-### Create a symlink file but make sure the directory/file block specified is valid (e.g. the directory specified is present) before doing so
+#### Create a symlink file but make sure the directory/file block specified is valid (e.g. the directory specified is present) before doing so
 ````text
 file { '/path/to/symlink/file':
 	ensure => 'link',
@@ -60,16 +60,16 @@ file { '/path/to/symlink/file':
 }
 ````
 
-## Users and Groups
+### Users and Groups
 
-### Ensure a group is present
+#### Ensure a group is present
 ````text
 group { 'samplegroup':
 	ensure => "present",
 }
 ````
 
-### Ensure a user is present with specified properties and is assigned to the specified group
+#### Ensure a user is present with specified properties and is assigned to the specified group
 ````text
 user { 'sampleuser':
 	ensure => 'present',
@@ -80,11 +80,11 @@ user { 'sampleuser':
 }
 ````
 
-## Services
+### Services
 
-### Start the service, enable the service on boot time, and refreshes (i.e. restart) the service if the File block subscribed to changes.
+#### Start the service, enable the service on boot time, and refreshes (i.e. restart) the service if the File block subscribed to changes.
 
-#### Note: The var $service_name should contain the pre-determined service name string specific to the operating system.
+##### Note: The var $service_name should contain the pre-determined service name string specific to the operating system.
 
 ````text
 service { 'service-name':
@@ -96,7 +96,7 @@ service { 'service-name':
 }
 ````
 
-### Turn off the service and disable the service at boot time
+#### Turn off the service and disable the service at boot time
 ````text
 service { 'service-name':
 	ensure => stopped,
@@ -104,9 +104,9 @@ service { 'service-name':
 }
 ````
 
-## Packages
+### Packages
 
-### Ensure the service is installed from the specified package repository (e.g. Yum used in this example).
+#### Ensure the service is installed from the specified package repository (e.g. Yum used in this example).
 ````text
 package { 'service-name':
 	provider => 'yum',
