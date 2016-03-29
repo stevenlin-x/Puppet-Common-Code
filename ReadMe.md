@@ -3,9 +3,9 @@ Puppet Common Code
 
 List of some commonly used Puppet code blocks.
 
-### Files and Directory
+#### Files and Directory
 
-#### Ensure a directory is present with specified properties, if not, create the directory. Also create all intermediate directories if applicable.
+Ensure a directory is present with specified properties, if not, create the directory. Also create all intermediate directories if applicable.
 
 ````text
 file { 'directory-name':
@@ -16,7 +16,7 @@ file { 'directory-name':
 }
 ````
 
-#### Ensure a directory is present, if not, create the directory and copy the contents from the source directory
+Ensure a directory is present, if not, create the directory and copy the contents from the source directory
 
 ````text
 file { 'directory-name':
@@ -28,14 +28,14 @@ file { 'directory-name':
 }
 ````
 
-#### Ensure a file is present
+Ensure a file is present
 ````text
 file { '/path/to/file':
 	ensure => 'file',
 }
 ````
 
-#### Ensure the file is present and copy its contents from the source directory
+Ensure the file is present and copy its contents from the source directory
 ````text
 file { '/path/to/file':
 	ensure => 'file',
@@ -43,7 +43,7 @@ file { '/path/to/file':
 }
 ````
 
-#### Create a symlink file
+Create a symlink file
 ````text
 file { '/path/to/symlink/file':
 	ensure => 'link',
@@ -51,7 +51,7 @@ file { '/path/to/symlink/file':
 }
 ````
 
-#### Create a symlink file but make sure the directory/file block specified is valid (e.g. the directory specified is present) before doing so
+Create a symlink file but make sure the directory/file block specified is valid (e.g. the directory specified is present) before doing so
 ````text
 file { '/path/to/symlink/file':
 	ensure => 'link',
