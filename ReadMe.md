@@ -1,7 +1,7 @@
-Puppet Common Code
+Puppet Manifest Code
 ==============
 
-List of some commonly used Puppet code blocks.
+List of some commonly used Puppet Manifest code blocks.
 
 #### Files and Directory
 
