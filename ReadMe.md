@@ -60,6 +60,8 @@ file { '/path/to/symlink/file':
 }
 ````
 
+---
+
 #### Users and Groups
 
 Ensure a group is present
@@ -79,6 +81,8 @@ user { 'sampleuser':
 	require => Group['samplegroup'],
 }
 ````
+
+---
 
 #### Services
 
@@ -103,6 +107,8 @@ service { 'service-name':
 	enable => false,
 }
 ````
+
+---
 
 #### Packages
 
